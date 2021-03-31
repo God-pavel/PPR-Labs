@@ -16,7 +16,7 @@ import static com.studying.util.SecondLabRelations.SECOND_LAB_RELATIONS;
 
 public class SecondLabExecutor implements Executor {
 
-    private static final Map<String, Function<int[][], String>> optimizationsFunctions =
+    public static final Map<String, Function<Integer[][], String>> optimizationsFunctions =
             Map.ofEntries(
                     Map.entry("X0R", relationBlockingOptimizationFunction),
                     Map.entry("X00R", strictRelationBlockingOptimizationFunction),
@@ -30,7 +30,7 @@ public class SecondLabExecutor implements Executor {
     public void execute() {
         System.out.println("-------FIRST PART-----------");
         int i = 1;
-        for (int[][] relation : FIRST_LAB_RELATIONS) {
+        for (Integer[][] relation : FIRST_LAB_RELATIONS) {
             System.out.println("Relation: " + i++);
             List<Propety> properties = getRelationPropeties(relation);
             System.out.println("Relation class: " + defineMainClass(properties));
@@ -42,7 +42,7 @@ public class SecondLabExecutor implements Executor {
 
         System.out.println("-------SECOND PART-----------");
         i = 1;
-        for (int[][] relation : SECOND_LAB_RELATIONS) {
+        for (Integer[][] relation : SECOND_LAB_RELATIONS) {
             System.out.println("Relation: " + i++);
             if (isAcyclic.test(relation)) {
                 System.out.println("NM Optimiztion:\n");

@@ -16,7 +16,7 @@ public class FirstLabExecutor implements Executor {
 
     @Override
     public void execute() {
-        for (int[][] relation : FIRST_LAB_RELATIONS) {
+        for (Integer[][] relation : FIRST_LAB_RELATIONS) {
             List<Propety> properties = getRelationPropeties(relation);
             System.out.print("Properties: " + properties + ". Main class: ");
             System.out.println(defineMainClass(properties));
@@ -24,7 +24,7 @@ public class FirstLabExecutor implements Executor {
         }
     }
 
-    public static List<Propety> getRelationPropeties(int[][] relation) {
+    public static List<Propety> getRelationPropeties(Integer[][] relation) {
         return PROPERTY_VALIDATOR.entrySet().stream()
                 .filter(entry -> entry.getValue().test(relation))
                 .map(Map.Entry::getKey)

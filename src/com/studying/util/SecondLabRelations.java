@@ -3,7 +3,7 @@ package com.studying.util;
 import java.util.List;
 
 public class SecondLabRelations {
-    private static final int[][] r1 = {
+    private static final Integer[][] r1 = {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -20,7 +20,7 @@ public class SecondLabRelations {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0},
     };
-    private static final int[][] r2 = {
+    private static final Integer[][] r2 = {
             {1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -37,7 +37,7 @@ public class SecondLabRelations {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0}
     };
-    private static final int[][] r3 = {
+    private static final Integer[][] r3 = {
             {0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1},
             {0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0},
             {0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0},
@@ -54,7 +54,7 @@ public class SecondLabRelations {
             {0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0}
     };
-    private static final int[][] r4 = {
+    private static final Integer[][] r4 = {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0},
             {1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1},
             {0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0},
@@ -71,7 +71,7 @@ public class SecondLabRelations {
             {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
             {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-    private static final int[][] r5 = {
+    private static final Integer[][] r5 = {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -88,7 +88,7 @@ public class SecondLabRelations {
             {1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-    private static final int[][] r6 = {
+    private static final Integer[][] r6 = {
             {0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1},
             {1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0},
             {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0},
@@ -105,7 +105,7 @@ public class SecondLabRelations {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0}
     };
-    private static final int[][] r7 = {
+    private static final Integer[][] r7 = {
             {0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1},
             {0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0},
@@ -122,7 +122,7 @@ public class SecondLabRelations {
             {0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-    private static final int[][] r8 = {
+    private static final Integer[][] r8 = {
             {0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1},
             {0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1},
@@ -139,7 +139,7 @@ public class SecondLabRelations {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-    private static final int[][] r9 = {
+    private static final Integer[][] r9 = {
             {0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1},
             {0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0},
             {0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1},
@@ -156,7 +156,7 @@ public class SecondLabRelations {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0}
     };
-    private static final int[][] r10 = {
+    private static final Integer[][] r10 = {
             {0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0},
             {1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1},
             {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1},
@@ -173,5 +173,5 @@ public class SecondLabRelations {
             {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-    public static final List<int[][]> SECOND_LAB_RELATIONS = List.of(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10);
+    public static final List<Integer[][]> SECOND_LAB_RELATIONS = List.of(r1, r2, r3, r4, r5, r6, r7, r8, r9, r10);
 }

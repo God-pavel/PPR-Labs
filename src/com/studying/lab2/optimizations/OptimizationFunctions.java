@@ -11,7 +11,7 @@ import static com.studying.util.KOptimizationUtils.K_TYPES;
 import static com.studying.util.KOptimizationUtils.RELATION_TYPE_PREDICATES;
 
 public class OptimizationFunctions {
-    public static final Function<int[][], String> asymmetricRelationBlockingOptimizationFunction = relation -> {
+    public static final Function<Integer[][], String> asymmetricRelationBlockingOptimizationFunction = relation -> {
         if (!isAsymmetric.test(relation)) {
             return "{}";
         }
@@ -25,7 +25,7 @@ public class OptimizationFunctions {
         return "{" + result + "}";
     };
 
-    public static final Function<int[][], String> asymmetricRelationDominationOptimizationFunction = relation -> {
+    public static final Function<Integer[][], String> asymmetricRelationDominationOptimizationFunction = relation -> {
         if (!isAsymmetric.test(relation)) {
             return "{}";
         }
@@ -40,7 +40,7 @@ public class OptimizationFunctions {
         return "{" + result + "}";
     };
 
-    public static final Function<int[][], String> relationBlockingOptimizationFunction = relation -> {
+    public static final Function<Integer[][], String> relationBlockingOptimizationFunction = relation -> {
         if (isAsymmetric.test(relation)) {
             return "{}";
         }
@@ -55,7 +55,7 @@ public class OptimizationFunctions {
         return "{" + result + "}";
     };
 
-    public static final Function<int[][], String> relationDominationOptimizationFunction = relation -> {
+    public static final Function<Integer[][], String> relationDominationOptimizationFunction = relation -> {
         if (isAsymmetric.test(relation)) {
             return "{}";
         }
@@ -70,7 +70,7 @@ public class OptimizationFunctions {
         return "{" + result + "}";
     };
 
-    public static final Function<int[][], String> strictRelationBlockingOptimizationFunction = relation -> {
+    public static final Function<Integer[][], String> strictRelationBlockingOptimizationFunction = relation -> {
         if (isAsymmetric.test(relation)) {
             return "{}";
         }
@@ -86,7 +86,7 @@ public class OptimizationFunctions {
         return "{" + result + "}";
     };
 
-    public static final Function<int[][], String> strictRelationDominationOptimizationFunction = relation -> {
+    public static final Function<Integer[][], String> strictRelationDominationOptimizationFunction = relation -> {
         if (isAsymmetric.test(relation)) {
             return "{}";
         }
@@ -102,7 +102,7 @@ public class OptimizationFunctions {
         return "{" + result + "}";
     };
 
-    public static final Function<int[][], String> KOptimizationFunction = (relation) -> {
+    public static final Function<Integer[][], String> KOptimizationFunction = (relation) -> {
         final List<List<String>> relationMatrix = applyRelationTypes(relation);
 
         return K_TYPES.entrySet().stream()
@@ -111,11 +111,11 @@ public class OptimizationFunctions {
                 .collect(Collectors.joining("\n"));
     };
 
-    public static final Function<int[][], String> NMOptimizationFunction = (relation) -> {
+    public static final Function<Integer[][], String> NMOptimizationFunction = (relation) -> {
         return buildResultString(getResult(getSCollectionIncrements(getInitialSCollection(relation), relation), relation), relation);
     };
 
-    private static List<Integer> getLowerSection(final int element, final int[][] matrix) {
+    private static List<Integer> getLowerSection(final int element, final Integer[][] matrix) {
 
         return IntStream.range(0, matrix.length)
                 .filter(index -> matrix[element][index] == 1)
@@ -123,7 +123,7 @@ public class OptimizationFunctions {
                 .collect(Collectors.toList());
     }
 
-    private static List<Integer> getUpperSection(final int element, final int[][] matrix) {
+    private static List<Integer> getUpperSection(final int element, final Integer[][] matrix) {
 
         return IntStream.range(0, matrix.length)
                 .filter(index -> matrix[index][element] == 1)
@@ -146,7 +146,7 @@ public class OptimizationFunctions {
                 .collect(Collectors.toSet());
     }
 
-    private static List<List<String>> applyRelationTypes(final int[][] relation) {
+    private static List<List<String>> applyRelationTypes(final Integer[][] relation) {
 
         return IntStream.range(0, relation.length)
                 .mapToObj(rowIndex -> IntStream.range(0, relation.length)
@@ -155,7 +155,7 @@ public class OptimizationFunctions {
                 .collect(Collectors.toList());
     }
 
-    private static String getRelationType(final int rowIndex, final int columnIndex, final int[][] relation) {
+    private static String getRelationType(final int rowIndex, final int columnIndex, final Integer[][] relation) {
 
         return RELATION_TYPE_PREDICATES.entrySet().stream()
                 .filter(entry -> entry.getKey().test(relation[rowIndex][columnIndex], relation[columnIndex][rowIndex]))
@@ -164,7 +164,7 @@ public class OptimizationFunctions {
                 .orElse("0");
     }
 
-    private static String solveForK(final List<List<String>> matrix, final Set<String> usedTypes, final int[][] relation, final int k) {
+    private static String solveForK(final List<List<String>> matrix, final Set<String> usedTypes, final Integer[][] relation, final int k) {
 
         final List<List<Integer>> subsetsByK = matrix.stream()
                 .map(row -> IntStream.range(0, matrix.size())
@@ -187,7 +187,7 @@ public class OptimizationFunctions {
                 .collect(Collectors.toList());
     }
 
-    private static List<Integer> getOptimalForK(final List<List<Integer>> subsetsByK, final int[][] relation) {
+    private static List<Integer> getOptimalForK(final List<List<Integer>> subsetsByK, final Integer[][] relation) {
 
         return IntStream.range(0, subsetsByK.size())
                 .filter(index -> subsetsByK.get(index)
@@ -204,14 +204,14 @@ public class OptimizationFunctions {
                 .collect(Collectors.joining(", ")) + "}";
     }
 
-    private static Set<Integer> getInitialSCollection(final int[][] relation) {
+    private static Set<Integer> getInitialSCollection(final Integer[][] relation) {
 
         return getRelationSet(relation.length).stream()
                 .filter(element -> getUpperSection(element, relation).isEmpty())
                 .collect(Collectors.toSet());
     }
 
-    private static List<Set<Integer>> getSCollectionIncrements(final Set<Integer> initialCollection, final int[][] relation) {
+    private static List<Set<Integer>> getSCollectionIncrements(final Set<Integer> initialCollection, final Integer[][] relation) {
 
         final List<Set<Integer>> collectionIncrements = new ArrayList<>();
         final Set<Integer> sCollection = new HashSet<>(initialCollection);
@@ -231,7 +231,7 @@ public class OptimizationFunctions {
         return collectionIncrements;
     }
 
-    private static boolean doesCollectionIncrementsContainAllSet(final List<Set<Integer>> collectionIncrements, final int[][] relation) {
+    private static boolean doesCollectionIncrementsContainAllSet(final List<Set<Integer>> collectionIncrements, final Integer[][] relation) {
 
         return collectionIncrements.stream()
                 .flatMap(Collection::stream)
@@ -239,7 +239,7 @@ public class OptimizationFunctions {
                 .containsAll(getRelationSet(relation.length));
     }
 
-    private static Set<Integer> getRemainingElements(Set<Integer> usedElements, final int[][] relation) {
+    private static Set<Integer> getRemainingElements(Set<Integer> usedElements, final Integer[][] relation) {
 
         return getRelationSet(relation.length).stream()
                 .filter(Predicate.not(usedElements::contains))
@@ -251,7 +251,7 @@ public class OptimizationFunctions {
         return collectionIncrements.get(0);
     }
 
-    private static Set<Integer> getResult(final List<Set<Integer>> sCollectionIncrement, final int[][] relation) {
+    private static Set<Integer> getResult(final List<Set<Integer>> sCollectionIncrement, final Integer[][] relation) {
 
         final Set<Integer> result = new LinkedHashSet<>(getFirstIncrement(sCollectionIncrement));
 
@@ -262,7 +262,7 @@ public class OptimizationFunctions {
         return result;
     }
 
-    private static Set<Integer> getSuitableElementsFromIncrement(final Set<Integer> increment, final Set<Integer> result, final int[][] relation) {
+    private static Set<Integer> getSuitableElementsFromIncrement(final Set<Integer> increment, final Set<Integer> result, final Integer[][] relation) {
 
         return increment.stream()
                 .filter(element -> intersectCollections(getUpperSection(element, relation), result).isEmpty())
@@ -276,12 +276,12 @@ public class OptimizationFunctions {
                 .collect(Collectors.toSet());
     }
 
-    private static boolean performCheckOfResult(final Set<Integer> result, final int[][] relation) {
+    private static boolean performCheckOfResult(final Set<Integer> result, final Integer[][] relation) {
 
         return checkInternalStabilityOfResult(result, relation) && checkExternalStabilityOfResult(result, relation);
     }
 
-    private static boolean checkInternalStabilityOfResult(final Set<Integer> result, final int[][] relation) {
+    private static boolean checkInternalStabilityOfResult(final Set<Integer> result, final Integer[][] relation) {
 
         return result.stream()
                 .allMatch(element -> result.stream()
@@ -289,12 +289,12 @@ public class OptimizationFunctions {
                         .allMatch(innerElement -> checkInternalStabilityCondition(element, innerElement, relation)));
     }
 
-    private static boolean checkInternalStabilityCondition(final int firstElement, final int secondElement, final int[][] relation) {
+    private static boolean checkInternalStabilityCondition(final int firstElement, final int secondElement, final Integer[][] relation) {
 
         return relation[firstElement][secondElement] == 0 && relation[secondElement][firstElement] == 0;
     }
 
-    private static boolean checkExternalStabilityOfResult(final Set<Integer> result, final int[][] relation) {
+    private static boolean checkExternalStabilityOfResult(final Set<Integer> result, final Integer[][] relation) {
 
         return getRelationSet(relation.length).stream()
                 .filter(Predicate.not(result::contains))
@@ -302,7 +302,7 @@ public class OptimizationFunctions {
                         .anyMatch(elementFromResult -> relation[elementFromResult][element] == 1));
     }
 
-    private static String buildResultString(final Set<Integer> result, final int[][] relation) {
+    private static String buildResultString(final Set<Integer> result, final Integer[][] relation) {
 
         return "X = {" + result.stream().map(el -> el += 1).map(Object::toString).collect(Collectors.joining(", ")) + "}\n"
                 + "Are stability checks passed: " + performCheckOfResult(result, relation);
