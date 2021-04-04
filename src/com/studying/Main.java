@@ -3,6 +3,7 @@ package com.studying;
 import com.studying.lab1.FirstLabExecutor;
 import com.studying.lab2.SecondLabExecutor;
 import com.studying.lab3.ThirdLabExecutor;
+import com.studying.lab4.FourthLabExecutor;
 import com.studying.lab5.FifthLabExecutor;
 
 public class Main {
@@ -16,7 +17,10 @@ public class Main {
 //        Executor thirdLabExecutor = new ThirdLabExecutor();
 //        thirdLabExecutor.execute();
 
-        Executor fifthLabExecutor = new FifthLabExecutor();
-        fifthLabExecutor.execute();
+        Executor fourthLabExecutor = new FourthLabExecutor();
+        fourthLabExecutor.execute();
+
+//        Executor fifthLabExecutor = new FifthLabExecutor();
+//        fifthLabExecutor.execute();
     }
 }

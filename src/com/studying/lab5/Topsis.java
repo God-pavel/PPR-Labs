@@ -102,9 +102,9 @@ public class Topsis {
                 .collect(Collectors.toList());
     }
 
-    public List<Double> normalizeWeights(final List<Integer> weights){
-        int sum = weights.stream()
-                .mapToInt(Integer::intValue)
+    public List<Double> normalizeWeights(final List<Double> weights){
+        double sum = weights.stream()
+                .mapToDouble(Double::doubleValue)
                 .sum();
         return weights.stream()
                 .map(i -> (double) i/ (double) sum)
